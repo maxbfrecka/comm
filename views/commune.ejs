@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  	<title>COMMUNE</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="assets/styles.css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
+  	<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script src="https://code.angularjs.org/1.3.10/angular-messages.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.3.10/angular-animate.js"></script>
+    <script src="controller.js"></script>
+	<script src="ngController.js"></script>
+  <script src="/assets/posts.js"></script>
+</head>
+
+<body>
+
+<% include partials/nav.ejs %>
+
+
+<!--commented out for the time being-->
+<!--
+	<div class="container">
+  		<h1>Commune</h1> 
+	</div>
+
+	<div id="fadetry">
+		<h2 id="open-thread">Open Thread</h2>
+	</div>
+-->
+
+
+
+
+<!-- removed stuff 
+
+			<button id="uploadimage" type="upload">Add image</button>
+-->
+<!--<input type="text" name="post" placeholder="Add reply" required/> -->
+<!--<input type="text" name="post" placeholder="Add reply" required/> -->
+<!--<textarea type="text" name="post" placeholder="Add reply"> -->
+
+
+	<div id="post-table">
+		<form>
+			<textarea name="post" required></textarea>
+
+<!-- to make the file button look good, use a jquery to load the file in with some script or something perhaps-->
+			<input type="file" id="imageupload" class="filestyle" accept="image/gif, image/jpeg, image/png" data-classButton="btn btn-primary" data-input="false" data-buttonText="Upload Image" data-buttonBefore="false">
+			<button id="submitpost" type="submit">Add reply</button>
+		</form>
+
+		<script>
+
+		</script>
+
+		<div class="posts">
+			<% for(var i=0; i < posts.length; i++){ %>
+			
+
+				<div class="post">
+				<div id="rID">
+					<span id="time"><%= posts[i].time %></span>
+					<span id="rID1"><%= posts[i].rID1 %></span><span id="rID2"><%= posts[i].rID2 %></span><span id="rID3"><%= posts[i].rID3 %></span><span id="rID4"><%= posts[i].rID4 %></span><span id="rID5"><%= posts[i].rID5 %></span><span id="rID6"><%= posts[i].rID6 %></span><span id="rID7"><%= posts[i].rID7 %></span><span id="rID8"><%= posts[i].rID8 %></span>
+				</div>
+
+					<blockquote class="message"><%= posts[i].post %></blockquote>
+				</div>
+			<% } %>
+		</div>
+	</div>
+
+
+
+</body>
+
+
+
+
+
+
+</html>
